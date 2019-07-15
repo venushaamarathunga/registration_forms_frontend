@@ -1,0 +1,29 @@
+<app-home></app-home>
+<!-- Default form register -->
+<form class="text-center border border-light p-5" [formGroup]="registerForm" autocomplete="off" novalidate (ngSubmit)="registerData(registerForm.value)" action="#!">
+
+        <p class="h4 mb-4">Register</p>
+    
+        <input type="text" formControlName="userName" id="registerFormUserName" class="form-control mb-4" placeholder="User Name" required>
+    
+        <!-- E-mail -->
+        <input type="email" formControlName="email" id="registerFormEmail" class="form-control mb-4" placeholder="E-mail" required>
+    
+        <!-- Password -->
+        <input type="password" formControlName="password" id="registerFormPassword" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock" required>
+        <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+            At least 8 characters and 1 digit
+        </small>
+    
+        <!-- Phone number -->
+        <input type="text" formControlName="telephoneNo" id="registerPhonePassword" class="form-control" placeholder="Phone number" aria-describedby="defaultRegisterFormPhoneHelpBlock" required>
+        <small id="registerFormPhoneHelpBlock" class="form-text text-muted mb-4">
+            Optional - for two step authentication
+        </small>
+    
+    
+        <!-- Sign up button -->
+        <button class="btn btn-info my-4 btn-block" type="submit" [disabled]="!registerForm.valid" (click)="submitOn()">Submit</button>
+       
+    </form>
+    <!-- Default form register -->

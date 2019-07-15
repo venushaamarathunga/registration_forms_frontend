@@ -1,0 +1,25 @@
+<app-home></app-home>
+<!-- Default form login -->
+<form class="text-center border border-light p-5" [formGroup]="signUpForm" autocomplete="off" novalidate (ngSubmit)="signUpData(signUpForm.value)" action="#!">
+
+    <p class="h4 mb-4">Sign in</p>
+
+    <!-- Email -->
+    <input type="User Name" formControlName="userName" id="loginFormUserName" class="form-control mb-4" placeholder="User Name" required>
+
+    <!-- Password -->
+    <input type="password" formControlName="password" id="loginFormPassword" class="form-control mb-4" placeholder="Password" required>
+
+    <div class="d-flex justify-content-around">
+        <div></div>
+        <div>
+            <!-- Forgot password -->
+            <a class="navbar-brand" [routerLink]="['/forgetpwd']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Forgot password?</a>
+        </div>
+    </div>
+
+    <!-- Sign in button -->
+    <button class="btn btn-info btn-block my-4" (click)="redirectToMainPage()" type="submit" [disabled]="!signUpForm.valid">Sign in</button>
+
+</form>
+<!-- Default form login -->
